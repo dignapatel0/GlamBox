@@ -1,0 +1,44 @@
+include ./common/header
+include ./common/banner
+
+main#main
+  .container
+    include ./common/filter
+
+    .my-5
+      h2.text-uppercase.text-center Showing all products from #{title}
+      
+      .d-flex.flex-wrap.my-5
+        each product in data
+          .card.border-0.shadow.pb-3.my-2(style="width: 16rem")
+            img.card-img-top(src=product.api_featured_image alt=product.name)
+            .card-body
+              if product.tag_list.length > 0
+                each tag, index in product.tag_list
+                  if index < 3
+                    span.badge.bg-secondary.my-1= tag
+
+              a.text-secondary.text-uppercase.text-decoration-none.d-block.my-2(
+                href=`/brand/${product.brand}`
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title=`See more products from ${product.brand}`
+              )= product.brand
+
+              p.card-title= product.name
+
+              h6.my-2
+                | Category: 
+                a.badge.bg-warning.text-decoration-none(
+                  href=`/productType/${product.product_type}`
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title=`See more ${product.product_type}`
+                )= product.product_type
+
+              p.card-text= product.price
+
+            .card-footer.border-0.bg-white.text-center
+              a.btn.btn-dark(href=product.website_link target="_blank") Go to website
+
+include ./common/footer

@@ -1,0 +1,23 @@
+{
+  "name": "glambox",
+  "version": "1.0.0",
+  "description": "Node.JS Assignment",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js"
+  },
+  "author": "Digna Patel",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "mongodb": "^6.13.0",
+    "mongoose": "^8.10.1",
+    "pug": "^3.0.3"
+  }
+}

@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap");
+
+:root {
+  --main-color: #a872b3; /* Slightly brighter purple from the image */
+  --secondary-color: #e8c6f0; /* Light lavender */
+  --accent-color: #f08080; /* Soft coral like the blush in image */
+  --dark-purple: #5e3c6b; /* Darker version for contrast */
+  --text-color: #ffffff;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(168, 114, 179, 0.15);
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Banner styles */
+#banner {
+  background-image: url(/images/background.jpg);
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(144, 92, 149, 0.8) 0%, rgba(94, 60, 107, 0.6) 60%, rgba(232, 198, 240, 0.3) 100%);
+}
+
+.banner-img-overlay {
+  position: absolute;
+  top: 35%;
+  right: 2%;
+  width: 500px;
+  max-width: 90%;
+  transform: translateY(-50%);
+  padding: 2.5rem !important;
+  z-index: 2;
+}
+
+.banner-img-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border-left: 4px solid var(--accent-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  z-index: -1;
+}
+
+.banner-img-overlay p {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 1.2 !important;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.banner-img-overlay::after {
+  content: '✨';
+  position: absolute;
+  font-size: 3rem;
+  top: 15px;
+  right: 25px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.banner-img-overlay .btn-shop-now {
+  background: linear-gradient(to right, var(--main-color), var(--accent-color));
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.banner-img-overlay .btn-shop-now:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Navbar styling */
+.navbar-brand span {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-dark {
+  background: linear-gradient(to right, var(--dark-purple), var(--main-color)) !important;
+}
+
+/* Card styling */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 10px !important;
+  box-shadow: 0 10px 20px var(--card-shadow) !important;
+  overflow: hidden;
+  margin: 1rem !important;
+  transition: all 0.3s ease-in-out;
+  max-width: 16rem;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(168, 114, 179, 0.25) !important;
+}
+
+.card-body {
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* Card layout */
+.d-flex.flex-wrap.my-5 {
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Button styling */
+.btn {
+  border-radius: 25px;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.btn-dark {
+  background-color: var(--dark-purple);
+  border-color: var(--dark-purple);
+}
+
+.btn-dark:hover {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  color: var(--text-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(168, 114, 179, 0.3);
+}
+
+.btn-default {
+  background-color: white;
+  border-color: var(--main-color) !important;
+  color: var(--main-color);
+}
+
+.btn-default:hover {
+  background-color: var(--main-color);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background-color: #acacac;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #888888;
+}
+
+/* Badge styling */
+.badge {
+  font-weight: 500;
+  padding: 0.5em 0.8em;
+  margin-right: 5px;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color) !important;
+  color: var(--dark-purple) !important;
+}
+
+.bg-warning {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+/* Filter area styling */
+div.p-3.my-5.border.border-3 {
+  border-radius: 15px;
+  border-color: var(--secondary-color) !important;
+  background-color: rgba(232, 198, 240, 0.1);
+  box-shadow: 0 5px 15px rgba(168, 114, 179, 0.1);
+}
+
+.form-select, .form-control {
+  border-radius: 8px;
+  border-color: #ddd;
+  padding: 0.6rem 1rem;
+}
+
+.form-select:focus, .form-control:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 3px rgba(168, 114, 179, 0.2);
+}
+
+/* Section title styling */
+h2.text-uppercase.text-center {
+  position: relative;
+  padding-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+  color: var(--dark-purple);
+}
+
+h2.text-uppercase.text-center::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, var(--main-color), var(--accent-color));
+  border-radius: 3px;
+}
+
+/* Footer styling */
+#footer {
+  background: linear-gradient(to right, var(--dark-purple), var(--main-color)) !important;
+  padding: 1rem 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  margin-top: auto;
+}
+
+/* Links styling */
+a.text-secondary {
+  color: var(--main-color) !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+a.text-secondary:hover {
+  color: var(--dark-purple) !important;
+}
+
+mark {
+  background-color: var(--secondary-color) !important;
+  color: var(--dark-purple);
+  padding: 0 5px;
+  border-radius: 4px;
+}
