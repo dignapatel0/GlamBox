@@ -15,6 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  max-width: 1280px;
   margin: 0;
 }
 
@@ -40,15 +41,15 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(144, 92, 149, 0.8) 0%, rgba(94, 60, 107, 0.6) 60%, rgba(232, 198, 240, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(144, 92, 149, 0.6) 0%, rgba(94, 60, 107, 0.4) 60%, rgba(240, 214, 198, 0.1) 100%);
 }
 
 .banner-img-overlay {
   position: absolute;
-  top: 35%;
-  right: 2%;
-  width: 500px;
-  max-width: 90%;
+  top: 30%;
+  right: 3%;
+  width: 400px;
+  max-width: 80%;
   transform: translateY(-50%);
   padding: 2.5rem !important;
   z-index: 2;
@@ -72,20 +73,11 @@ body {
 .banner-img-overlay p {
   font-family: "Playfair Display", serif;
   font-weight: 700;
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   line-height: 1.2 !important;
   color: #ffffff;
   margin-bottom: 1.5rem;
   position: relative;
-}
-
-.banner-img-overlay::after {
-  content: '✨';
-  position: absolute;
-  font-size: 3rem;
-  top: 15px;
-  right: 25px;
-  color: rgba(255, 255, 255, 0.6);
 }
 
 .banner-img-overlay .btn-shop-now {
@@ -112,7 +104,7 @@ body {
 .navbar-brand span {
   color: var(--secondary-color);
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 1rem;
   letter-spacing: 1px;
   font-family: 'Montserrat', sans-serif;
 }
@@ -161,7 +153,7 @@ body {
 /* Button styling */
 .btn {
   border-radius: 25px;
-  padding: 10px 15px;
+  padding: 10px 10px;
   transition: all 0.3s ease;
   font-weight: 800;
   letter-spacing: 0.5px;
